@@ -20,8 +20,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
+- Resource Group setup
+- Virtual Machine setup
 - Step 3
 - Step 4
 
@@ -62,7 +62,7 @@ Here are the settings for my Virtual Machine, again adjust the region setting ba
 <img src="https://i.gyazo.com/003aa0ef384ab0073c0375b0d205510b.png" height="80%" width="80%" alt="Virtual Machine setup"/>
 </p>
 <p>
-
+Proceed to Disk (settings left to default, then to Networking.) In the Network tab (Settings also left to default), your Virtual network will automatically be created by Azure, this is also where you will see your public and private IP. You can then click Review+Create, Azure will validate your settings and you can now create your Virtual Machine. You will then see "Deployment in Progress" and below that resources will be created which include: Virtual Network, a Public IP, a Network Security group (Essentially a Firewall your VM will use), an OS disk, and a Virtual Network Interface Card. 
 </p>
 <br />
 
