@@ -108,7 +108,7 @@ Now go to Client 1 and connect using Remote Desktop Connection and the public IP
 
 <p> 
   
-<img src="https://i.gyazo.com/931fe920b90ab5d08528d8aa2cbab260.jpg" height="80%" width="80%" alt="RDP Set up"/>
+<img src="https://i.gyazo.com/931fe920b90ab5d08528d8aa2cbab260.jpg" height="80%" width="80%" alt="Ping Test"/>
 
 </p>
 <p>
@@ -120,7 +120,7 @@ Our ping has failed because Windows Firewall is block ICMP traffic, so we will d
 <br />
 
 <p> 
-<img src="https://i.gyazo.com/9c9e95e3f28c15b886276edb21508ba7.png" height="80%" width="80%" alt="RDP Set up"/>
+<img src="https://i.gyazo.com/9c9e95e3f28c15b886276edb21508ba7.png" height="80%" width="80%" alt="ICMP Set up"/>
 
 </p>
 <p>
@@ -130,3 +130,32 @@ Search for firewall and click Windows Firewall with Advanced Security. Then we w
 </p>
 
 <br />
+
+<p>
+  
+<img src="https://i.gyazo.com/b412092248d8decf3c328845b37f5d2f.png" height="80%" width="80%" alt="RDP Set up"/>
+
+</p>
+<p>
+
+Now we will set up Active Directory. We will use default settings on Before you Begin, Installation Type, and Server Selection. Once you are on the Server Roles tab, click on Active Directory Domain Services and Add Features. Once that is done, you can click next on all the default settings on each tab and once on the confirmation tab we can click Install. 
+</p>
+
+<br />
+
+<p>
+  
+<img src="https://i.gyazo.com/83bac03e39e02da34de7b259af502641.png" height="80%" width="80%" alt="RDP Set up"/>
+
+</p>
+<p>
+
+After it finishes installing, go into the Server Manager Dashboard and click the flag with the notification at the top right. Click Promote the Server Controller and run through the installation, nothing needs to be changed from the default.
+The DC will need to be restarted, but during remote desktop connection you will need to login with Full Qualified Domain Name (FQDN). Use "Different account" during login and login with "mydomain.com/*****" (Username and password you chose). 
+
+</p>
+
+<br />
+
+
+
