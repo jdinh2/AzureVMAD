@@ -156,6 +156,58 @@ The DC will need to be restarted, but during remote desktop connection you will 
 </p>
 
 <br />
+<p>
+  
+<img src="https://i.gyazo.com/83bac03e39e02da34de7b259af502641.png" height="80%" width="80%" alt="RDP Set up"/>
+
+</p>
+<p>
+
+After it finishes installing, go into the Server Manager Dashboard and click the flag with the notification at the top right. Click Promote the Server Controller and run through the installation, nothing needs to be changed from the default.
+The DC will need to be restarted, but during remote desktop connection you will need to login with Full Qualified Domain Name (FQDN). Use "Different account" during login and login with "mydomain.com/*****" (Username and password you chose). 
+
+</p>
+
+<br /> 
+
+<p>
+  
+<img src="https://i.gyazo.com/4d49133f3bc030a78b6d97619c7b905c.png" height="80%" width="80%" alt="RDP Set up"/>
+
+</p>
+
+<p>
+
+Once restarted, go into the DC and search "Active Directory Users and Computers". From there right click on my domains, go to New > Organizational Unit and set up an EMPLOYEES unit and ADMINS unit. Go to the Admins unit and add New User (can be named whatever you want). 
+
+</p>
+
+<br /> 
+
+<p>
+  
+<img src="https://i.gyazo.com/dc4cffa67d85d08f777d18219bc13670.png" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+Once created, go to properties > Member of > Add... > Domain Admins > OK > Apply
+
+</p>
+
+<br/> 
+
+<p>
+  
+<img src="https://i.gyazo.com/dc4cffa67d85d08f777d18219bc13670.png" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+Once created, go to properties > Member of > Add... > Domain Admins > OK > Apply.
+From here you will now Log out/close the Remote Desktop connection to DC-1 and log back in as “mydomain.com\jane_admin”
 
 
-
+</p>
