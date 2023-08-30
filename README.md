@@ -155,13 +155,6 @@ The DC will need to be restarted, but during remote desktop connection you will 
 </p>
 
 </br>
-<p>
-  
-<img src="https://i.gyazo.com/83bac03e39e02da34de7b259af502641.png" height="80%" width="80%" alt="RDP Set up"/>
-
-</p>
-
-</br>
 
 <p>
   
