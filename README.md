@@ -240,5 +240,64 @@ Restart Client 1 from the Azure portal and login to Client 1 using the new Publi
 
 <p>
 
-In Client 1, go to Settings > Rename PC > Change and enter mydomain.com into Member of. This will point to the DC and will know Client 1 can join through the domain itself. 
+In Client 1, go to Settings > Rename PC > Change and enter mydomain.com into Member of. This will point to the DC and will know Client 1 can join through the domain itself. A notification should appear welcoming you to the Domain and the Client will restart. Once it has restarted, search Remote Desktop Settings > Select Users that can remotely access to the PC > ADD > Domain users. This will automatically put all users in the security group and click OK. (Normally we would want to do this through Group Policy). 
+
+</p>
+
+</br>
+
+<p>
+  
+<img src="https://i.gyazo.com/656e1439d4c5ae71151a72e6161d6705.png" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+You can see all User Accounts created are added to Domain Users group automatically and should all be able to login to Client 1. You can now login to Client 1 as a normal, non-admin user. Normally we would want to do this through Group Policy. 
+
+</p>
+
+<br>
+<p>
+  
+<img src="https://i.gyazo.com/83640dcdc6ff260fb78a52dd44dd96b1.png" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+We can see that we are logged into DC1 as Jane_Admin. Open Powershell_ise as an Admin, Create a new File and paste the contents of the script into it (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
+
+
+</p>
+
+<br>
+
+<p>
+  
+<img src="https://i.gyazo.com/86e0c7c0e32c0db98c1ae108f46cb3b4.png" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+On line 1, we see the script will create account with the password "Password1" and it will create 100000 scripts. Run the script and watch as accounts are created. 
+
+</p>
+<p>
+
+<img src="https://i.gyazo.com/f3548888b3dd84a61b086697a6ff1482.jpg" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+  
+<img src="https://i.gyazo.com/7b06968b7fa1f6889ae87f841bb5e1ba.jpg" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+You can use all of these accounts to login to Client 1! 
 </p>
