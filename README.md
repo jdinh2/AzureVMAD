@@ -37,7 +37,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.gyazo.com/9580caea46c4bab095f4c910257cdcd2.png" height="80%" width="80%" alt="Resource Group Setup"/>
+<img src="https://i.gyazo.com/9eea4c8e97a169a91c643f45a2878bc6.png" height="80%" width="80%" alt="Resource Group Setup"/>
 </p>
 <p>
 Enter the Azure portal and search for Resource Group. 
@@ -45,14 +45,14 @@ Enter the Azure portal and search for Resource Group.
 </br>
 
 <p>
-<img src="https://i.gyazo.com/075ad054b7abb21f35c47c56edc0ca15.png" height="80%" width="80%" alt="Resource Group setup settings"/>
+<img src="https://i.gyazo.com/4d71396d56ec8a80d5c77e3d6ffef3d8.png" height="80%" width="80%" alt="Resource Group setup settings"/>
 </p>
 <p>
 Set up your resource group based on your region. 
 </p>
 </br>
 <p>
-<img src="https://i.gyazo.com/22a4a11b86ee5091b34154273f587b8d.png" height="80%" width="80%" alt="Virtual Machine setup"/>
+<img src="https://i.gyazo.com/40d46ab39d08d4c6e2abf351a30ce432.png" height="80%" width="80%" alt="Virtual Machine setup"/>
 </p>
 <p>
 Now go into the Azure portal, search for Virtual machines, and click create your Virtual machine. 
@@ -227,4 +227,18 @@ Go back into the Azure portal to our DC VM, then the Networking tab, and copy th
 
 Restart Client 1 from the Azure portal and login to Client 1 using the new Public IP address listed in the Azure Portal. 
 
+</p>
+
+
+</br>
+
+<p>
+  
+<img src="https://i.gyazo.com/c5752d5fcf8ee8ce3c3c925a166b1c1f.jpg" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+In Client 1, go to Settings > Rename PC > Change and enter mydomain.com into Member of. This will point to the DC and will know Client 1 can join through the domain itself. 
 </p>
