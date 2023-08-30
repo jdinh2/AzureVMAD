@@ -298,6 +298,12 @@ On line 1, we see the script will create account with the password "Password1" a
 </p>
 
 <p>
+  
+<img src="https://i.gyazo.com/4655768404d8ec06ec54c48ed8916ca5.jpg" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
 
 You can use all of these accounts to login to Client 1! 
 </p>
