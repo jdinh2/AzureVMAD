@@ -39,7 +39,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>
 Enter the Azure portal and search for Resource Group. 
 </p>
-<br />
+</br>
 
 <p>
 <img src="https://i.gyazo.com/075ad054b7abb21f35c47c56edc0ca15.png" height="80%" width="80%" alt="Resource Group setup settings"/>
@@ -47,22 +47,21 @@ Enter the Azure portal and search for Resource Group.
 <p>
 Set up your resource group based on your region. 
 </p>
-<br />
-
+</br>
 <p>
 <img src="https://i.gyazo.com/22a4a11b86ee5091b34154273f587b8d.png" height="80%" width="80%" alt="Virtual Machine setup"/>
 </p>
 <p>
 Now go into the Azure portal, search for Virtual machines, and click create your Virtual machine. 
 </p>
-<br />
+</br>
 
 <p>
 <img src="https://i.gyazo.com/f6a8f1c61a1d716f3a5d9952594d46d8.png" height="80%" width="80%" alt="Virtual Machine setup"/>
 </p>
 <p>
 Here are the settings for my Virtual Machine, again adjust the region setting based on your location.
-<br />
+</br>
 
 <p>
 <img src="https://i.gyazo.com/befd2b6e509ecdd2fa76827b288afbb1.png" height="80%" width="80%" alt="Virtual Machine setup"/>
@@ -70,7 +69,7 @@ Here are the settings for my Virtual Machine, again adjust the region setting ba
 <p>
 Proceed to Disk (settings left to default, then to Networking.) In the Network tab (Settings also left to default), your Virtual network will automatically be created by Azure, this is also where you will see your public and private IP. You can then click Review+Create, Azure will validate your settings and you can now create your Virtual Machine. You will then see "Deployment in Progress" and below that resources will be created which include: Virtual Network, a Public IP, a Network Security group (Essentially a Firewall your VM will use), an OS disk, and a Virtual Network Interface Card.Repeat the process and in the second network tab, select the same virtual network as your first VM. 
 </p>
-<br />
+</br>
 
 
 <img src="https://i.gyazo.com/85c0a5471c38fe5f82b8c6a384135c59.png" height="80%" width="80%" alt="Set IP to Static p"/>
@@ -79,7 +78,7 @@ Proceed to Disk (settings left to default, then to Networking.) In the Network t
 Go back into the first VM and go to the networking tab. Here we will click on the Network Interface > IP configurations 
 </p>
 
-<br />
+</br>
 
 <p>
   
@@ -92,7 +91,7 @@ Set the Dynamic IP to Static.
   
 </p>
 
-<br />
+</br>
 <p>
   
 <img src="https://i.gyazo.com/cacc2981608f6536c6dc182950bffdb1.png" height="80%" width="80%" alt="RDP Set up"/>
@@ -104,7 +103,7 @@ Now go to Client 1 and connect using Remote Desktop Connection and the public IP
 
 </p>
 
-<br />
+</br>
 
 <p> 
   
@@ -117,7 +116,7 @@ Our ping has failed because Windows Firewall is block ICMP traffic, so we will d
 
 </p>
 
-<br />
+</br>
 
 <p> 
 <img src="https://i.gyazo.com/9c9e95e3f28c15b886276edb21508ba7.png" height="80%" width="80%" alt="ICMP Set up"/>
@@ -129,7 +128,7 @@ Search for firewall and click Windows Firewall with Advanced Security. Then we w
 
 </p>
 
-<br />
+</b>
 
 <p>
   
@@ -141,7 +140,7 @@ Search for firewall and click Windows Firewall with Advanced Security. Then we w
 Now we will set up Active Directory. We will use default settings on Before you Begin, Installation Type, and Server Selection. Once you are on the Server Roles tab, click on Active Directory Domain Services and Add Features. Once that is done, you can click next on all the default settings on each tab and once on the confirmation tab we can click Install. 
 </p>
 
-<br />
+</br>
 
 <p>
   
@@ -155,20 +154,14 @@ The DC will need to be restarted, but during remote desktop connection you will 
 
 </p>
 
-<br />
+</br>
 <p>
   
 <img src="https://i.gyazo.com/83bac03e39e02da34de7b259af502641.png" height="80%" width="80%" alt="RDP Set up"/>
 
 </p>
-<p>
 
-After it finishes installing, go into the Server Manager Dashboard and click the flag with the notification at the top right. Click Promote the Server Controller and run through the installation, nothing needs to be changed from the default.
-The DC will need to be restarted, but during remote desktop connection you will need to login with Full Qualified Domain Name (FQDN). Use "Different account" during login and login with "mydomain.com/*****" (Username and password you chose). 
-
-</p>
-
-<br /> 
+</br>
 
 <p>
   
@@ -182,7 +175,7 @@ Once restarted, go into the DC and search "Active Directory Users and Computers"
 
 </p>
 
-<br /> 
+</br>
 
 <p>
   
@@ -196,7 +189,7 @@ Once created, go to properties > Member of > Add... > Domain Admins > OK > Apply
 
 </p>
 
-<br/> 
+</br>
 
 <p>
   
@@ -209,5 +202,33 @@ Once created, go to properties > Member of > Add... > Domain Admins > OK > Apply
 Once created, go to properties > Member of > Add... > Domain Admins > OK > Apply.
 From here you will now Log out/close the Remote Desktop connection to DC-1 and log back in as “mydomain.com\jane_admin”
 
+
+</p>
+
+</br>
+
+<p>
+  
+<img src="https://i.gyazo.com/98201a4b2b5330ffef82f604abfa9c82.jpg" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+<p>
+
+Go back into the Azure portal to our DC VM, then the Networking tab, and copy the NIC Private IP. Then we will go to C1's > Networking > Click on the virtual NIC next to Network Interface > DNS Servers > Change DNS servers to DC's NIC Private IP address and save. 
+
+
+</p>
+
+</br>
+
+<p>
+  
+<img src="https://i.gyazo.com/e8a395b7a2cb093c3cc2d71edc544e14.png" height="80%" width="80%" alt="Admin Set up"/>
+
+</p>
+
+<p>
+
+Restart Client 1 from the Azure portal and login to Client 1 using the new Public IP address listed in the Azure Portal. 
 
 </p>
