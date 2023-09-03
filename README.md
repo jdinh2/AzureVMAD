@@ -37,10 +37,10 @@ In this lab we will create two VMs in the same VNET. One will be a Domain Contro
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://prnt.sc/rqgqtyusqocU" height="80%" width="80%" alt="Resource Group Setup"/>
+<img src="https://i.gyazo.com/fc0610532047ba3d384af1156502344a.png" height="80%" width="80%" alt="Resource Group Setup"/>
 </p>
 <p>
-DC-1 has to have a static Private IP Address. Client one will connect to DC-1 to ensure connectivity we will try to ping DC-1 from Client-1. At first, the ping will not work correctly. We have to enable ICMPv4 on the firewall on DC-1. Now we can ping DC-1 successfully from Client-1
+
 </p>
 </br>
 
@@ -89,7 +89,9 @@ Proceed to Disk (settings left to default, then to Networking.) In the Network t
 <img src="https://i.gyazo.com/85c0a5471c38fe5f82b8c6a384135c59.png" height="80%" width="80%" alt="Set IP to Static p"/>
 </p>
 <p>
-Go back into the first VM and go to the networking tab. Here we will click on the Network Interface > IP configurations 
+DC-1 has to have a static Private IP Address. Client one will connect to DC-1 to ensure connectivity we will try to ping DC-1 from Client-1. At first, the ping will not work correctly.
+  
+So Go back into the first VM and go to the networking tab. Here we will click on the Network Interface > IP configurations 
 </p>
 
 </br>
@@ -126,8 +128,7 @@ Now go to Client 1 and connect using Remote Desktop Connection and the public IP
 </p>
 <p>
 
-Our ping has failed because Windows Firewall is block ICMP traffic, so we will do the same remote desktop connection process with DC-1. 
-
+Our ping has failed because Windows Firewall is blocking ICMP traffic, we have to enable ICMPv4 on the firewall on DC-1. so we will do the same remote desktop connection process with DC-1. 
 </p>
 
 </br>
