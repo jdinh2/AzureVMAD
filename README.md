@@ -123,7 +123,7 @@ Now go to Client 1 and connect using Remote Desktop Connection and the public IP
 
 <p> 
   
-<img src="https://i.gyazo.com/931fe920b90ab5d08528d8aa2cbab260.jpg" height="80%" width="80%" alt="Ping Test"/>
+<img src="https://i.gyazo.com/1838fce31608d9a33f30e280db656162.png" height="80%" width="80%" alt="Ping Test"/>
 
 </p>
 <p>
