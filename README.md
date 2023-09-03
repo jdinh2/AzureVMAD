@@ -3,7 +3,7 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+In this lab we will create two VMs in the same VNET. One will be a Domain Controller, the other will be a Client machine. Because the DC is providing Active Directory services to the client workstation, we will switch it to a static IP. The client computer will join the domain. We will have control over the client computer's DNS configuration, and the client computer will use the DC as its DNS server.<br />
 
 
 
@@ -35,6 +35,17 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <h2>Deployment and Configuration Steps</h2>
+
+<p>
+<img src="https://prnt.sc/rqgqtyusqocU" height="80%" width="80%" alt="Resource Group Setup"/>
+</p>
+<p>
+DC-1 has to have a static Private IP Address. Client one will connect to DC-1 to ensure connectivity we will try to ping DC-1 from Client-1. At first, the ping will not work correctly. We have to enable ICMPv4 on the firewall on DC-1. Now we can ping DC-1 successfully from Client-1
+</p>
+</br>
+
+
+
 
 <p>
 <img src="https://i.gyazo.com/9eea4c8e97a169a91c643f45a2878bc6.png" height="80%" width="80%" alt="Resource Group Setup"/>
